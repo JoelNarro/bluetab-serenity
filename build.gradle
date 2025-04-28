@@ -1,0 +1,36 @@
+plugins {
+    id 'java'
+    id 'net.serenity-bdd.serenity-gradle-plugin' version '3.9.8'
+}
+
+repositories {
+    mavenCentral()
+    google()
+    gradlePluginPortal()
+}
+
+ext {
+    serenityVersion = '4.0.30'
+    junitVersion = '4.13.2'
+}
+
+dependencies {
+    testImplementation "net.serenity-bdd:serenity-core:${serenityVersion}"
+    testImplementation "net.serenity-bdd:serenity-junit:${serenityVersion}"
+    testImplementation "net.serenity-bdd:serenity-screenplay-webdriver:${serenityVersion}"
+    testImplementation "net.serenity-bdd:serenity-cucumber:${serenityVersion}"
+    testImplementation "junit:junit:${junitVersion}"
+    implementation "net.sourceforge.tess4j:tess4j:4.5.4"
+    implementation "net.serenity-bdd:serenity-single-page-report:${serenityVersion}"
+    implementation "net.masterthought:cucumber-reporting:4.11.2"
+}
+
+test {
+    useJUnit()
+}
+
+compileJava {
+    sourceCompatibility = '17'
+    targetCompatibility = '17'
+}
+
