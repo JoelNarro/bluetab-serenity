@@ -1,6 +1,5 @@
 package stepdefinitions;
 
-import net.serenitybdd.annotations.Screenshots;
 import net.serenitybdd.annotations.Steps;
 import io.cucumber.java.en.*;
 import net.sourceforge.tess4j.TesseractException;

@@ -1,9 +1,6 @@
 package steps;
 
-import net.serenitybdd.annotations.Screenshots;
 import net.serenitybdd.annotations.Step;
-import net.sourceforge.tess4j.TesseractException;
-import net.thucydides.model.domain.screenshots.Screenshot;
 import pages.TrianglePage;
 
 import java.io.IOException;

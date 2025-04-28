@@ -1,0 +1,40 @@
+<html lang='en'><head><link href='prism/prism.css' rel='stylesheet' /></head><body><script src='prism/prism.js'></script><body><div><pre><code class='language-html'>&lt;html lang="en"&gt;<br/>
+ &lt;head&gt;<br/>
+  &lt;meta charset="UTF-8"&gt;<br/>
+  &lt;title&gt;Triangle Calculator&lt;/title&gt;<br/>
+  &lt;script src="process.js"&gt;&lt;/script&gt;<br/>
+  &lt;script&gt;<br/>
+        function server_log(t){<br/>
+            let xhttp = new XMLHttpRequest();<br/>
+            let user = "?user=" + encodeURIComponent(document.getElementById("username").value);<br/>
+            let sideA = "&sideA=" + encodeURIComponent(t.sideA);<br/>
+            let sideB = "&sideB=" + encodeURIComponent(t.sideB);<br/>
+            let sideC = "&sideC=" + encodeURIComponent(t.sideC);<br/>
+            let desc = "&desc=" + t.desc;<br/>
+            let parms = user + sideA + sideB + sideC + desc + "\n";<br/>
+            xhttp.open("GET", "https://www.developsense.com/cgi-bin/triangle_log.cgi" + parms, true);<br/>
+            xhttp.send();<br/>
+        }<br/>
+    &lt;/script&gt;<br/>
+ &lt;/head&gt;<br/>
+ &lt;body&gt;<br/>
+  &lt;div align="center"&gt;<br/>
+   &lt;h1 data-toggle="tooltip" title="Version 1.02"&gt;Test the Famous Triangle&lt;/h1&gt;<br/>
+   &lt;p&gt;Enter three numbers. The numbers will be treated as the dimensions of a triangle.&lt;/p&gt;<br/>
+   &lt;p&gt;When you press the "Check" button, the program will display the type of triangle that you specified.&lt;/p&gt;<br/>
+   &lt;h3&gt;Your name: &lt;input type="text" id="username"&gt;&lt;/h3&gt;<br/>
+   &lt;canvas id="triangleBox" width="300" height="300" style="border:1px solid #d3d3d3; background-color:#f0f0f0;"&gt;<br/>
+    Your browser does not support the HTML5 canvas tag. LOSER!<br/>
+   &lt;/canvas&gt;<br/>
+   &lt;script&gt;bounding_box();&lt;/script&gt;<br/>
+   &lt;form id="sides"&gt;<br/>
+    &lt;p&gt;Side A: &lt;input type="text" id="SideA"&gt;&lt;/p&gt;<br/>
+    &lt;p&gt;Side B: &lt;input type="text" id="SideB"&gt;&lt;/p&gt;<br/>
+    &lt;p&gt;Side C: &lt;input type="text" id="SideC"&gt;&lt;/p&gt;<br/>
+   &lt;/form&gt;&lt;button type="button" onclick="processTriangle()"&gt;Check&lt;/button&gt; &lt;!-- clear button goes here --&gt; &lt;!-- spec at http://www.developsense.com/triangle/triangle_spec.html --&gt;<br/>
+  &lt;/div&gt;<br/>
+  &lt;div&gt;<br/>
+   &lt;p id="output"&gt;&lt;/p&gt;<br/>
+  &lt;/div&gt;<br/>
+ &lt;/body&gt;<br/>
+&lt;/html&gt;</code></pre></div></body></html>
